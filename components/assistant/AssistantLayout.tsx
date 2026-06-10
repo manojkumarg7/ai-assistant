@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { VoiceSidebar } from "./VoiceSidebar";
 import { TranscriptPanel } from "./TranscriptPanel";
+import { MobileChatPanel } from "./MobileChatPanel";
 import { useVoiceAssistant } from "@/hooks/useVoiceAssistant";
 import { logElevenLabsEnv } from "@/lib/env";
 
@@ -16,9 +17,10 @@ function AssistantShell() {
   const voice = useVoiceAssistant();
 
   return (
-    <div className="flex flex-1 flex-col overflow-hidden lg:flex-row">
+    <div className="flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row">
       <VoiceSidebar voice={voice} />
       <TranscriptPanel />
+      <MobileChatPanel voice={voice} />
     </div>
   );
 }

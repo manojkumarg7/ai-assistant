@@ -8,6 +8,7 @@ interface VoiceControlsProps {
   isStarting: boolean;
   onStart: () => Promise<void>;
   onEnd: () => void;
+  fullWidth?: boolean;
 }
 
 /** Primary voice session actions — start/end conversation. */
@@ -16,14 +17,17 @@ export function VoiceControls({
   isStarting,
   onStart,
   onEnd,
+  fullWidth = false,
 }: VoiceControlsProps) {
+  const widthClass = fullWidth ? "w-full" : "w-full max-w-[220px]";
+
   if (isConnected) {
     return (
       <Button
         variant="destructive"
         size="lg"
         onClick={onEnd}
-        className="w-full max-w-[220px] rounded-2xl"
+        className={`${widthClass} rounded-2xl`}
       >
         <PhoneOff className="h-4 w-4" />
         End Conversation
@@ -36,7 +40,7 @@ export function VoiceControls({
       size="lg"
       onClick={() => void onStart()}
       disabled={isStarting}
-      className="w-full max-w-[220px] rounded-2xl"
+      className={`${widthClass} rounded-2xl`}
     >
       {isStarting ? (
         <>

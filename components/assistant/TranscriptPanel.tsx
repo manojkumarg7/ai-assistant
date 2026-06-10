@@ -19,7 +19,7 @@ export function TranscriptPanel() {
   }, [messages, status]);
 
   return (
-    <section className="flex h-full flex-1 flex-col bg-background/50 lg:w-[70%]">
+    <section className="hidden h-full flex-1 flex-col bg-background/50 lg:flex lg:w-[70%]">
       <header className="border-b border-border/60 px-6 py-4">
         <h2 className="text-lg font-bold text-foreground">Live Transcript</h2>
         <p className="mt-1 text-sm text-muted-foreground">

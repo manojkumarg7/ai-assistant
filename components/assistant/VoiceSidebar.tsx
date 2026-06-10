@@ -35,7 +35,7 @@ export function VoiceSidebar({ voice }: VoiceSidebarProps) {
   const badgeVariant = STATUS_BADGE_VARIANT[status];
 
   return (
-    <aside className="flex h-full w-full flex-col border-r border-border/60 glass-panel lg:w-[30%] lg:min-w-[320px] lg:max-w-[400px]">
+    <aside className="hidden h-full w-full flex-col border-r border-border/60 glass-panel lg:flex lg:w-[30%] lg:min-w-[320px] lg:max-w-[400px]">
       <div className="flex flex-1 flex-col gap-6 overflow-y-auto p-6 scrollbar-thin">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-3">
