@@ -49,7 +49,15 @@ export function MobileChatPanel({ voice }: MobileChatPanelProps) {
           </p>
         </div>
         {isConnected && (
-          <Badge variant={status === "speaking" ? "speaking" : status === "listening" ? "listening" : "connected"}>
+          <Badge
+            variant={
+              status === "speaking"
+                ? "speaking"
+                : status === "listening"
+                  ? "listening"
+                  : "connected"
+            }
+          >
             {status === "speaking" ? (
               <span className="flex items-center gap-1">
                 <SpeakingWaveform active />
@@ -84,7 +92,9 @@ export function MobileChatPanel({ voice }: MobileChatPanelProps) {
         {!hasMessages && isConnected && (
           <div className="flex h-full min-h-[120px] flex-col items-center justify-center px-4 text-center">
             <p className="text-sm text-muted-foreground">
-              {isSpeaking ? "Assistant is speaking..." : "Listening — start speaking"}
+              {isSpeaking
+                ? "Assistant is speaking..."
+                : "Listening — start speaking"}
             </p>
           </div>
         )}
